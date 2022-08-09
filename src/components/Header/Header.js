@@ -41,7 +41,7 @@ const Header = (prop) => {
 
   function sendCartAnalytics(){
     window.dataLayer.push({
-      event_name: "view_cart",
+      event: "view_cart",
       ecommerce: {
         currency: "USD",
         value: 7.77,

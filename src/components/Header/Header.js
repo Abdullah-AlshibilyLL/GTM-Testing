@@ -148,6 +148,7 @@ const Header = (prop) => {
               onClick={() => {
                 setShowMiniCart(true);
                 setMobileMenu(false);
+                dayaLayer.push({ecommerce: null});
               }}
             >
               <Icon symbol={'bag'}></Icon>

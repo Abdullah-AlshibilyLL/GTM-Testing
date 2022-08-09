@@ -37,6 +37,10 @@
         {
           "text": "Privacy Policy",
           "link": "/support#policy"
+        },
+        {
+          "text": "Off Site Link",
+          "link": "https://www.gatsbyjs.com/plugins/gatsby-plugin-google-gtag/"
         }
       ]
     },

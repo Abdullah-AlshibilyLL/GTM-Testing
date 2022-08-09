@@ -39,6 +39,39 @@ const Header = (prop) => {
     window.dataLayer.push({ ecommerce: null });
   }
 
+  function sendCartAnalytics(){
+    window.dataLayer.push({
+      ecommerce: {
+        currency: "USD",
+        value: 7.77,
+        items: [
+          {
+            item_id: "MJUM8066-GYDZ",
+            item_name: "Lambswool Crew Neck Jumper",
+            affiliation: "Google Merchandise Store",
+            coupon: "SUMMER_FUN",
+            currency: "USD",
+            discount: 2.22,
+            index: 0,
+            item_brand: "Sunspel",
+            item_category: "Apparel",
+            item_category2: "Adult",
+            item_category3: "Shirts",
+            item_category4: "Crew",
+            item_category5: "Long sleeve",
+            item_list_id: "related_products",
+            item_list_name: "Related Products",
+            item_variant: "Anthracite Melange",
+            location_id: "ChIJIQBpAG2ahYAR_6128GcTUEo",
+            price: 220,
+            quantity: 1,
+            size: "XS"
+          }
+        ]
+      }
+    })
+  }
+
   const handleHover = (navObject) => {
     if (navObject.category) {
       setShowMenu(true);

@@ -73,7 +73,7 @@ export function sendViewItem(itemData){
             items: [
             {
                 item_id: "SKU_12345",
-                item_name: "Stan and Friends Tee",
+                item_name: itemData,
                 affiliation: "Google Merchandise Store",
                 coupon: "SUMMER_FUN",
                 currency: "USD",

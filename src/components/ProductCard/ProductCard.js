@@ -5,6 +5,8 @@ import * as styles from './ProductCard.module.css';
 import Icon from '../Icons/Icon';
 import CurrencyFormatter from '../CurrencyFormatter';
 
+import { sendViewItem } from '../../helpers/analytics';
+
 const ProductCard = (props) => {
   const [isWishlist, setIsWishlist] = useState(false);
   const {
@@ -18,7 +20,11 @@ const ProductCard = (props) => {
     height = 580,
   } = props;
 
-  const handleRouteToProduct = () => {
+  const handleRouteToProduct = (e) => {
+    let selected = e.target.src.toString().split("/").pop();
+
+    sendViewItem(selected);
+
     navigate('/product/sample');
   };
 
@@ -36,7 +42,7 @@ const ProductCard = (props) => {
     <div className={styles.root}>
       <div
         className={styles.imageContainer}
-        onClick={() => handleRouteToProduct()}
+        onClick={(e) => handleRouteToProduct(e)}
         role={'presentation'}
       >
         <img style={{ height: `${height}px` }} src={image} alt={imageAlt}></img>

@@ -34,6 +34,10 @@ const Header = (prop) => {
     'Candles Cinnamon',
   ];
 
+  const clearDataLayer = () => {
+    window.dataLayer = window.dataLayer.push({ ecommerce: null});
+  }
+
   const handleHover = (navObject) => {
     if (navObject.category) {
       setShowMenu(true);
@@ -148,7 +152,7 @@ const Header = (prop) => {
               onClick={() => {
                 setShowMiniCart(true);
                 setMobileMenu(false);
-                dayaLayer.push({ecommerce: null});
+                clearDataLayer();
               }}
             >
               <Icon symbol={'bag'}></Icon>

@@ -34,8 +34,9 @@ const Header = (prop) => {
     'Candles Cinnamon',
   ];
 
-  const clearDataLayer = () => {
-    window.dataLayer = window.dataLayer.push({ ecommerce: null});
+  function clearDataLayer(){
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ ecommerce: null });
   }
 
   const handleHover = (navObject) => {

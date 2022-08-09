@@ -15,6 +15,8 @@ import MiniCart from '../MiniCart';
 import MobileNavigation from '../MobileNavigation';
 import * as styles from './Header.module.css';
 
+import { clearDataLayer, sendCartAnalytics } from '../../helpers/analytics';
+
 const Header = (prop) => {
   const [showMiniCart, setShowMiniCart] = useState(false);
   const [mobileMenu, setMobileMenu] = useState(false);
@@ -33,45 +35,6 @@ const Header = (prop) => {
     'Lama Pajamas',
     'Candles Cinnamon',
   ];
-
-  function clearDataLayer(){
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({ ecommerce: null });
-  }
-
-  function sendCartAnalytics(){
-    window.dataLayer.push({
-      event: "view_cart",
-      ecommerce: {
-        currency: "USD",
-        value: 7.77,
-        items: [
-          {
-            item_id: "MJUM8066-GYDZ",
-            item_name: "Lambswool Crew Neck Jumper",
-            affiliation: "Google Merchandise Store",
-            coupon: "SUMMER_FUN",
-            currency: "USD",
-            discount: 2.22,
-            index: 0,
-            item_brand: "Sunspel",
-            item_category: "Apparel",
-            item_category2: "Adult",
-            item_category3: "Shirts",
-            item_category4: "Crew",
-            item_category5: "Long sleeve",
-            item_list_id: "related_products",
-            item_list_name: "Related Products",
-            item_variant: "Anthracite Melange",
-            location_id: "ChIJIQBpAG2ahYAR_6128GcTUEo",
-            price: 220,
-            quantity: 1,
-            size: "XS"
-          }
-        ]
-      }
-    })
-  }
 
   const handleHover = (navObject) => {
     if (navObject.category) {

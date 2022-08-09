@@ -187,6 +187,7 @@ const Header = (prop) => {
                 setShowMiniCart(true);
                 setMobileMenu(false);
                 clearDataLayer();
+                sendCartAnalytics();
               }}
             >
               <Icon symbol={'bag'}></Icon>

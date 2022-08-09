@@ -15,7 +15,7 @@ import MiniCart from '../MiniCart';
 import MobileNavigation from '../MobileNavigation';
 import * as styles from './Header.module.css';
 
-import { clearDataLayer, sendCartAnalytics } from '../../helpers/analytics';
+import { sendCartAnalytics } from '../../helpers/analytics';
 
 const Header = (prop) => {
   const [showMiniCart, setShowMiniCart] = useState(false);
@@ -150,7 +150,6 @@ const Header = (prop) => {
               onClick={() => {
                 setShowMiniCart(true);
                 setMobileMenu(false);
-                clearDataLayer();
                 sendCartAnalytics();
               }}
             >
